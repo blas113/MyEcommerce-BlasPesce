@@ -1,23 +1,23 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text,View,TextInput,TouchableOpacity } from "react-native";   
+import React from "react";
 
-const TopBar = (input,setInput,onAddTask) => {
-  return (
-    <View style={styles.view1}>
-        <TextInput
-            placeholder="Comprar vacío" 
-            style={styles.input}
-            value={input}
-            onChangeText={setInput} 
-        />
-        <TouchableOpacity style={styles.button} onPress={onAddTask}>
-            <Text style={styles.buttonText}>Agregar</Text>
-        </TouchableOpacity>
-    </View>
-  )
-}
+const TopBar = ({input, setInput,onAddTask}) => {
+    return (
+        <View style={styles.view1}>
+            <TextInput
+                placeholder="Agregar Tarea"
+                style={styles.input}
+                value={input}
+                onChangeText={setInput}
+            />
+            <TouchableOpacity style={styles.button} onPress={onAddTask}>
+                <Text style={styles.buttonText}>Agregar</Text>
+            </TouchableOpacity>
+        </View>
+    );
+};
 
-export default TopBar
+export default TopBar;
 
 const styles = StyleSheet.create({
     view1: {
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: "center",
     },
-})
+});

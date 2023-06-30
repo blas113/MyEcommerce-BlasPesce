@@ -1,57 +1,61 @@
-import { StyleSheet, Text, View,Modal,Pressable} from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Modal, Pressable, } from "react-native";
+import React from "react";
 
-const ModalTask = (modalVisible,setModalVisible,taskActive) => {
-  return (
-    <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-            setModalVisible(!modalVisible);
-        }}>
-        <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-                <Text style={styles.modalText}>{taskActive.task}</Text>
-                <View style={styles.buttonContainer}>
-                    <Pressable
-                        style={[styles.button, styles.buttonDone]}
-                        onPress={() => setModalVisible(!modalVisible)}>
-                        <Text style={styles.textStyle}>Done</Text>
-                    </Pressable>
-                    <Pressable
-                        style={[styles.button, styles.buttonNotYet]}
-                        onPress={() => setModalVisible(!modalVisible)}>
-                        <Text style={styles.textStyle}>Not yet</Text>
-                    </Pressable>
-                    <Pressable
-                        style={[styles.button, styles.buttonClose]}
-                        onPress={() => setModalVisible(!modalVisible)}>
-                        <Text style={styles.textStyle}>Cancel</Text>
-                    </Pressable>
+const ModalTask = ({modalVisible, setModalVisible,taskActive}) => {
+    return (
+        <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+                setModalVisible(!modalVisible);
+            }}
+        >
+            <View style={styles.centeredView}>
+                <View style={styles.modalView}>
+                    <Text style={styles.modalText}>{taskActive.task}</Text>
+                    <View style={styles.buttonContainer}>
+                        <Pressable
+                            style={[styles.button, styles.buttonDone]}
+                            onPress={() => setModalVisible(!modalVisible)}
+                        >
+                            <Text style={styles.textStyle}>Done</Text>
+                        </Pressable>
+                        <Pressable
+                            style={[styles.button, styles.buttonNotyet]}
+                            onPress={() => setModalVisible(!modalVisible)}
+                        >
+                            <Text style={styles.textStyle}>Not yet</Text>
+                        </Pressable>
+                        <Pressable
+                            style={[styles.button, styles.buttonClose]}
+                            onPress={() => setModalVisible(!modalVisible)}
+                        >
+                            <Text style={styles.textStyle}>Cancel</Text>
+                        </Pressable>
+                    </View>
                 </View>
             </View>
-        </View>
-    </Modal>
-  )
-}
+        </Modal>
+    );
+};
 
-export default ModalTask
+export default ModalTask;
 
 const styles = StyleSheet.create({
     centeredView: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         marginTop: 22,
-      },
+    },
     modalView: {
         margin: 20,
-        backgroundColor: 'white',
+        backgroundColor: "white",
         borderRadius: 20,
         padding: 35,
-        alignItems: 'center',
-        shadowColor: '#000',
+        alignItems: "center",
+        shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 2,
@@ -60,34 +64,35 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5,
     },
-    buttonContainer:{
-        flexDirection:"row",
-        alignItems:"center",
+    buttonContainer: {
+        flexDirection: "row",
+        alignItems: "center",
     },
     button: {
         borderRadius: 20,
-        padding: 10,
+        padding: 13,
         elevation: 2,
+        marginLeft: 5
     },
     buttonOpen: {
-        backgroundColor: '#F194FF',
+        backgroundColor: "#F194FF",
     },
     buttonDone: {
-      backgroundColor: "green" ,
+        backgroundColor: "green",
     },
-    buttonNotYet:{
-        backgroundColor: "red",
+    buttonNotyet: {
+        backgroundColor: "orange",
     },
-    buttonClose: {
-        backgroundColor: '#2196F3',
+    buttonClose:{
+        backgroundColor:"red"
     },
     textStyle: {
-        color: 'white',
-        fontWeight: 'bold',
-        textAlign: 'center',
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center",
     },
     modalText: {
         marginBottom: 15,
-        textAlign: 'center',
+        textAlign: "center",
     },
-})
+});

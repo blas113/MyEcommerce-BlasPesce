@@ -1,26 +1,23 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 
-export default function RenderItemTask() {
- 
-    const RenderItemTask = ({item, onPressTask}) => {
-        return (
-            <Pressable onPress={() => onPressTask(item)}>
+const RenderItemTask = ({item, onPressTask}) => {
+    return (
+        <Pressable onPress={() => onPressTask(item)}>
             <View style={styles.task} key={item.id}>
                 <Text style={styles.taskText}>{item.task}</Text>
             </View>
-            </Pressable>
-        )
-    }
-  
+        </Pressable>
+    )
 }
+
+export default RenderItemTask
 
 const styles = StyleSheet.create({
     task: {
         width: 200,
-        backgroundColor: "azure",
         padding: 10,
-        backgroundColor: "mediumpurple",
+        backgroundColor: "dodgerblue",
         borderRadius: 6,
         borderColor: "#000",
         borderBottomWidth: 3,

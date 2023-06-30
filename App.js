@@ -4,16 +4,17 @@ import MainScreen from './src/screens/MainScreen';
 const taskList = [
   {
     id: 1,
-    task: "Regar plantas",
+    task: "Comprar Bebida",
     completed: false
   },
   {
     id: 2,
-    task: "Lavar platos",
+    task: "Comprar Postre",
     completed: false
-  },{
+  },
+  {
     id: 3,
-    task: "Limpiar el baño",
+    task: "Limpiar el patio",
     completed: false
   },{
     id: 4,
